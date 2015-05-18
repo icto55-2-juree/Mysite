@@ -10,7 +10,7 @@
 <c:choose>
 <c:when test="${param.type=='main' }"> 
 	<li class="selected" style="text-align: center;">${authMember.name }님 로그인</li>
-	<li><a href="/mysite/member?a=guestbook">방명록</a></li>
+	<li><a href="/mysite/guestbook?a=guestbook">방명록</a></li>
 	<li><a href="/mysite/board?a=board_list">게시판</a></li>
 </c:when>
 <c:otherwise>

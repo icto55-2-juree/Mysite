@@ -14,7 +14,7 @@
 		<div id="content">
 			<div id="guestbook" class="delete-form">
 				<form method="post" action="/mysite/guestbook">
-					<input type="hidden" name="a" value="delete">
+					<input type="hidden" name="a" value="gdelete">
 					<input type='hidden' name="no" value="${authMember.no }">
 					<label>비밀번호</label>
 					<input type="password" name="password">

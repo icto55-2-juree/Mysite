@@ -76,6 +76,7 @@ width: 100px;
 			<input type="submit" value="글쓰기" >
 			</div>
 		<table class="type10">
+		<tr>
 					<th></th>
 					<th id= "writer">글쓴이</th>
 					<th id="title">제목</th>

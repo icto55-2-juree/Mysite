@@ -8,8 +8,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import com.sds.icto.mysite.servlet.action.board.BoardActionFactory;
 import com.sds.icto.mysite.servlet.action.member.ActionFactory;
-import com.sds.icto.mysite.servlet.action.member.BoardActionFactory;
 import com.sds.icto.web.Action;
 
 /**

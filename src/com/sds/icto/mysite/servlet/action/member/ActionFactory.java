@@ -38,26 +38,6 @@ public class ActionFactory {
 			action = new ModifyMemberPageAction();
 		}else if( "modifyMem".equals( a ) ) {
 			action = new ModifyMemberAction();
-		}else if( "insert".equals( a ) ) {
-			action = new GuestbookInsertAction();
-		}else if( "guestbook".equals( a ) ) {
-			action = new GuestbookAction();
-		}else if( "gdelete".equals( a ) ) {
-			action = new GDeleteAction();
-		}else if("board_list".equals(a)){
-			action = new BoardListAction();
-		}else if("insertBoard".equals(a)){
-			action = new BoardInsertAction();
-		}else if("insertBoardPage".equals(a)){
-			action = new BoardInsertPageAction();
-		}else if("getboard".equals(a)){
-			action = new GetBoardAction();
-		}else if("bmodifypage".equals(a)){
-			action = new ModifyBoardPageAction();
-		}else if("bmodify".equals(a)){
-			action = new ModifyBoardAction();
-		}else if("bdelete".equals(a)){
-			action = new DeleteBoardAction();
 		}
 		
 		if( action == null ) {

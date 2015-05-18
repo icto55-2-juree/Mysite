@@ -8,7 +8,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import com.sds.icto.mysite.servlet.action.member.GuestbookActionFactory;
+import com.sds.icto.mysite.servlet.action.guestbook.GuestbookActionFactory;
 import com.sds.icto.web.Action;
 
 /**

@@ -10,6 +10,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.sds.icto.mysite.vo.GuestbookVo;
+import com.sun.corba.se.spi.orbutil.fsm.Guard.Result;
 
 
 public class GuestbookDao {
@@ -66,6 +67,39 @@ public class GuestbookDao {
 		return list;
 	}
 	
+	public GuestbookVo getGuestbook(Long no) throws ClassNotFoundException, SQLException{
+		Connection conn = getConnection();
+		
+		String sql = "select * from guestbook where no=?";
+		PreparedStatement pstmt = conn.prepareStatement(sql);
+		
+		pstmt.setLong(1, no);
+		ResultSet rs = pstmt.executeQuery();
+		GuestbookVo vo = new GuestbookVo();
+		
+		if(rs.next()){
+			no = rs.getLong(1);
+			String name = rs.getString( 2 );
+			String password = rs.getString ( 3 );
+			String message = rs.getString( 4 );
+			String regDate = rs.getString( 5 );
+			
+			vo.setNo(no);
+			vo.setName(name);
+			vo.setPassword(password);
+			vo.setMessage(message);
+			vo.setRegDate(regDate);
+			
+			System.out.println(password);
+		}
+		
+		rs.close();
+		pstmt.close();
+		conn.close();
+		
+		return vo; 
+	}
+	
 	public void delete()
 		throws ClassNotFoundException, SQLException {
 		Connection conn = getConnection();
@@ -93,6 +127,21 @@ public class GuestbookDao {
 		pstmt.close();
 		conn.close();
 	}
+	
+	public void delete(Long no)
+			throws ClassNotFoundException, SQLException {
+			Connection conn = getConnection();
+			
+			String sql = "delete from guestbook where no = ?";
+			PreparedStatement pstmt = conn.prepareStatement(sql);
+			
+			pstmt.setLong( 1, no);
+			
+			pstmt.executeUpdate();
+			
+			pstmt.close();
+			conn.close();
+		}
 
 	private Connection getConnection()
 		throws ClassNotFoundException, SQLException {
